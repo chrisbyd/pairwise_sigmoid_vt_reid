@@ -203,9 +203,9 @@ elif args.optim == 'adam':
          
 def adjust_learning_rate(optimizer, epoch):
     """Sets the learning rate to the initial LR decayed by 10 every 30 epochs"""
-    if epoch < 30:
+    if epoch < 20:
         lr = args.lr
-    elif epoch >= 30 and epoch < 60:
+    elif epoch >= 20 and epoch < 70:
         lr = args.lr * 0.1
     else:
         lr = args.lr * 0.01
@@ -318,7 +318,7 @@ def test(epoch):
     
 # training
 print('==> Start Training...')    
-for epoch in range(start_epoch, 61-start_epoch):
+for epoch in range(start_epoch, 80-start_epoch):
 
     print('==> Preparing Data Loader...')
     # identity sampler
